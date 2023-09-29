@@ -1,0 +1,7 @@
+
+*aws-creds*
+terraform.tfstate
+.terraform*
+.terraform/*
+terraform*
+terraform/**

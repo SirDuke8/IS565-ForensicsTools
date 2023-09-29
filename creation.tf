@@ -29,6 +29,20 @@ resource "aws_security_group" "main" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  egress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
 
 resource "aws_launch_template" "main" {
@@ -41,25 +55,11 @@ resource "aws_launch_template" "main" {
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
-    apt-get update -y
-    apt-get -y full-upgrade
-    apt-get install nmap -y
-    apt-get install apache2 -y
-    apt-get install wireshark -y
-    apt-get install traceroute -y
-    apt-get install curl -y
-    apt-get install git -y
-    apt-get install python3 -y
-    apt-get install php -y
-    apt-get install netcat -y
-    apt-get install john -y
-    apt-get install hydra -y
-    apt-get install nikto -y
-    apt-get install snort -y
-    apt-get install tcpdump -y
-    apt-get install net-tools -y
+    yum update -y
+    yum install -y nmap httpd wireshark traceroute curl git python3 php netcat hydra tcpdump net-tools
   EOF
   )
+
 
   lifecycle {
     create_before_destroy = true
