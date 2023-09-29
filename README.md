@@ -100,18 +100,18 @@ This terraform script uses the following commands to install a variety of tools 
 ## Proof-of-Value
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is1.png)
-Here, we have the script at work when it initializes the instances we will install the forensics tools in.
+- Here, we have the script at work when it initializes the instances we will install the forensics tools in.
 
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is2.png)
-We can see that an instance has been made, and is now ready to be accessed.
+- We can see that an instance has been made, and is now ready to be accessed.
 
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is3.png)
-Demonstration that nmap was successfully installed and is working.
+- Demonstration that nmap was successfully installed and is working.
 
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is4.png)
-Demonstration use of traceroute.
+- Demonstration use of traceroute.
 
 This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. We are excited to work more on this project in the coming months!
