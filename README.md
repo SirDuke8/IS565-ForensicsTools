@@ -1,7 +1,19 @@
-# September Creation
+This terraform script uses the following commands to install a variety of tools to help Digital Forensics students in their educational pursuits. The script works quickly and can be deployed to a large number of instances instantaneously, which allows this script to be used in classroom settings with dozens of students simultaneously. The tools being installed are as follows:
 
-## Public Code Repository
-- [IS565-ForensicsTools/creation.tf at main · SirDuke8/IS565-ForensicsTools (GitHub)](https://github.com/SirDuke8/IS565-ForensicsTools)
+- [Apache2](https://httpd.apache.org/)
+- [curl](https://curl.se/)
+- [Git](https://git-scm.com/)
+- [Hydra](https://github.com/vanhauser-thc/thc-hydra)
+- [Netcat](https://en.wikipedia.org/wiki/Netcat)
+- [net-tools](https://en.wikipedia.org/wiki/Net-tools)
+- [Nikto](https://cirt.net/Nikto2)
+- [Nmap](https://nmap.org/)
+- [PHP](https://www.php.net/)
+- [Python3](https://www.python.org/)
+- [Snort](https://www.snort.org/)
+- [tcpdump](https://www.tcpdump.org/)
+- [traceroute](https://linux.die.net/man/8/traceroute)
+- [Wireshark](https://www.wireshark.org/)
 
 ## Documentation
 
@@ -87,6 +99,19 @@
 
 ## Proof-of-Value
 
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is1.png)
+Here, we have the script at work when it initializes the instances we will install the forensics tools in.
 
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is2.png)
+We can see that an instance has been made, and is now ready to be accessed.
+
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is3.png)
+Demonstration that nmap was successfully installed and is working.
+
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is4.png)
+Demonstration use of traceroute.
 
 This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. We are excited to work more on this project in the coming months!
