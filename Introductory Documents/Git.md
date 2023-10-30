@@ -2,7 +2,6 @@
 Git is like a time machine for your code. It allows you to take snapshots of your project at different points in time, making it easy to go back to a previous version of your code if something goes wrong. It's used by programmers to work together on software projects, ensuring that everyone is on the same page.
 
 **Basic Git Commands:**
-Here are some basic Git commands that high school students might find useful:
 
 1. **Initialize a Git Repository:**
    To start using Git in a project, you need to initialize a Git repository. You do this in your project's directory:
