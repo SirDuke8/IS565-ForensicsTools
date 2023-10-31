@@ -4,21 +4,6 @@ provider "aws" {
   profile                  = "default"
 }
 
-data "aws_ami" "main" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "architecture"
-    values = ["x86_64"]
-  }
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-2.0.*"]
-  }
-}
-
 resource "aws_security_group" "main" {
   name        = "main-sg"
   description = "Security Group for IS565 EC2"
@@ -26,6 +11,13 @@ resource "aws_security_group" "main" {
   ingress {
     from_port   = 22
     to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 3389
+    to_port     = 3389
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -47,7 +39,7 @@ resource "aws_security_group" "main" {
 
 resource "aws_launch_template" "main" {
   name_prefix   = "IS565-"
-  image_id      = data.aws_ami.main.id
+  image_id      = "ami-066771efbcf9a404a"
   instance_type = "t2.micro"
   key_name      = "EC2Key"
 
@@ -55,8 +47,8 @@ resource "aws_launch_template" "main" {
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
-    yum update -y
-    yum install -y nmap httpd wireshark traceroute curl git python3 php netcat hydra tcpdump net-tools
+    sudo apt update -y
+    sudo apt full-upgrade -y
   EOF
   )
 
@@ -73,6 +65,6 @@ resource "aws_instance" "main" {
   }
 
   tags = {
-    Name = "IS565-september"
+    Name = "IS565-october"
   }
 }
