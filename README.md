@@ -97,7 +97,7 @@ This terraform script uses the following commands to install a variety of tools 
   yum install net-tools -y
   ```
 
-## Proof-of-Value
+## Proof-of-Value - September
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is1.png)
 - Here, we have the script at work when it initializes the instances we will install the forensics tools in.
@@ -115,3 +115,18 @@ This terraform script uses the following commands to install a variety of tools 
 - Demonstration use of traceroute.
 
 This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. We are excited to work more on this project in the coming months!
+
+## Proof-of-Value - October
+Our desire here was to iterate on the september creation. The changes we made were mostly geared towards educating the users on the use cases for each of the software we highlighted in September, and then making the instance kali linux based.
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is5.png)
+- Here, we subscribed to use the kali linux image to then apply the AMI to our terraform.
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is6.png)
+- Once we were deployed the Kali instance, we had to install all the necessary software, following the guide found here: https://www.kali.org/docs/cloud/aws/. We also downloaded all of the guide files we created onto the image under the kali user.
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is7.png)
+- Once those files and programs were installed on Kali the way we wanted, we created a snapshot Golden Image, to then be used in our terraform. So everytime the terraform is run, it will create a Kali image with all of the guide files and programs installed and configured correctly.
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is8.png)
+- as you can see, the AMI of our terraform instance is the same as the golden image shown above.
