@@ -1,6 +1,7 @@
 This terraform script uses the following commands to install a variety of tools to help Digital Forensics students in their educational pursuits. The script works quickly and can be deployed to a large number of instances instantaneously, which allows this script to be used in classroom settings with dozens of students simultaneously. The tools being installed are as follows:
 
 - [Apache2](https://httpd.apache.org/)
+- [Autopsy](https://www.autopsy.com/)
 - [curl](https://curl.se/)
 - [Git](https://git-scm.com/)
 - [Hydra](https://github.com/vanhauser-thc/thc-hydra)
