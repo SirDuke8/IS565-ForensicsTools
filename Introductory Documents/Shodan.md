@@ -52,7 +52,7 @@ Shodan is a search engine that lets you find specific types of computers (server
   Replace <product> with the name of a specific product or software.
 
 
-7. **API Key Usage: **
+7. **API Key Usage:**
   If you have a Shodan API key, you can use it with the following command.
 
   ```
