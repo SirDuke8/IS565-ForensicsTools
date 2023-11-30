@@ -11,6 +11,7 @@ This terraform script uses the following commands to install a variety of tools 
 - [PHP](https://www.php.net/)
 - [Python3](https://www.python.org/)
 - [Snort](https://www.snort.org/)
+- [Shodan](https://www.shodan.io/)
 - [tcpdump](https://www.tcpdump.org/)
 - [traceroute](https://linux.die.net/man/8/traceroute)
 - [Wireshark](https://www.wireshark.org/)
@@ -96,6 +97,10 @@ This terraform script uses the following commands to install a variety of tools 
   ```
   yum install net-tools -y
   ```
+- Install Shodan, is a search engine designed to map and gather information about internet-connected devices and systems:
+  ```
+  pip install -U --user shodan
+  ```
 
 ## Proof-of-Value - September
 
@@ -130,3 +135,6 @@ Our desire here was to iterate on the september creation. The changes we made we
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is8.png)
 - as you can see, the AMI of our terraform instance is the same as the golden image shown above.
+
+## Proof-of-Value - November
+
