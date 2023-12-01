@@ -103,25 +103,6 @@ This terraform script uses the following commands to install a variety of tools 
   pip install -U --user shodan
   ```
 
-## Proof-of-Value - September
-
-![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is1.png)
-- Here, we have the script at work when it initializes the instances we will install the forensics tools in.
-
-
-![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is2.png)
-- We can see that an instance has been made, and is now ready to be accessed.
-
-
-![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is3.png)
-- Demonstration that nmap was successfully installed and is working.
-
-
-![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is4.png)
-- Demonstration use of traceroute.
-
-This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. 
-
 The implementation of a firewall restricting access to the BYU network and the integration of a load balancer for the auto scaling group represent significant steps in fortifying our network security and optimizing resource allocation upon creating a preferred learning environment.
 
 ## Access Restrictions with Firewall
@@ -142,6 +123,26 @@ The load balancer is an integral component of our new auto scaling group, dynami
 
 ## Proof-of-Value - October
 Our desire here was to iterate on the september creation. The changes we made were mostly geared towards educating the users on the use cases for each of the software we highlighted in September, and then making the instance kali linux based.
+
+## Proof-of-Value - September
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is1.png)
+- Here, we have the script at work when it initializes the instances we will install the forensics tools in.
+
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is2.png)
+- We can see that an instance has been made, and is now ready to be accessed.
+
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is3.png)
+- Demonstration that nmap was successfully installed and is working.
+
+
+![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is4.png)
+- Demonstration use of traceroute.
+
+This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. 
+
 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is5.png)
 - Here, we subscribed to use the kali linux image to then apply the AMI to our terraform.
