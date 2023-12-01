@@ -120,7 +120,25 @@ This terraform script uses the following commands to install a variety of tools 
 ![Starting Application](https://github.com/SirDuke8/IS565-ForensicsTools/blob/main/pictures/is4.png)
 - Demonstration use of traceroute.
 
-This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. We are excited to work more on this project in the coming months!
+This project is set to be improved upon in the future. We can change the instance type to allow for interaction with tools like Wireshark and enhance the security group and VPC it is attached to. With different instance types and configurations, we can introduce additional technologies to the instance. 
+
+The implementation of a firewall restricting access to the BYU network and the integration of a load balancer for the auto scaling group represent significant steps in fortifying our network security and optimizing resource allocation upon creating a preferred learning environment.
+
+## Access Restrictions with Firewall
+The firewall has been configured to only allow incoming and outgoing traffic from and to IP addresses associated with the BYU network. This measure ensures that our infrastructure is shielded from unauthorized external access, bolstering the overall security of our system.
+
+## Firewall Configuration Details
+- Firewall Type: Ingress and Egress filtering
+- Allowed IP Range: BYU network IP addresses
+- Denied IP Range: Any IP address not belonging to the BYU network
+
+## Auto Scaling Group Integration
+The load balancer is an integral component of our new auto scaling group, dynamically distributing incoming traffic among multiple instances based on predefined criteria. This not only improves system reliability but also allows for automatic scaling in response to varying workloads.
+
+## Auto Scaling Group Configuration Details
+- Load Balancer Type: Application Load Balancer
+- Integration with Auto Scaling Group: Yes
+- Scaling Policies: Defined based on CPU utilization and other relevant metrics
 
 ## Proof-of-Value - October
 Our desire here was to iterate on the september creation. The changes we made were mostly geared towards educating the users on the use cases for each of the software we highlighted in September, and then making the instance kali linux based.
