@@ -1,5 +1,6 @@
 **What is Shodan?** 
 Shodan is a search engine that lets you find specific types of computers (servers, routers, etc.) connected to the internet. It's often used for security research and finding devices with vulnerabilities.
+Shodan does offer a free API key with limited access, but for more advanced features and broader usage, a paid subscription might be necessary. The use of an API key allows you to authenticate and access additional functionalities provided by Shodan.
 
 **Basic Shodan Commands:**
 
