@@ -16,22 +16,21 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.1.0/24"
+  cidr_block              = "10.0.2.0/24"
   availability_zone       = "us-east-2a"
-  map_public_ip_on_launch = true
 
   tags = {
     Name = "IS565-Public-Subnet"
   }
 }
 
-resource "aws_subnet" "private_subnet" {
+resource "aws_subnet" "public_subnet2" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.2.0/24"
+  cidr_block              = "10.0.3.0/24"
   availability_zone       = "us-east-2b"
 
   tags = {
-    Name = "IS565-Private-Subnet"
+    Name = "IS565-Public-Subnet2"
   }
 }
 
@@ -60,6 +59,7 @@ resource "aws_route_table_association" "public_association" {
 resource "aws_security_group" "main" {
   name        = "main-sg"
   description = "Security Group for IS565 EC2"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     from_port   = 22
@@ -96,7 +96,10 @@ resource "aws_launch_template" "main" {
   instance_type = "t2.micro"
   key_name      = "EC2Key"
 
-  vpc_security_group_ids = [aws_security_group.main.id]
+  network_interfaces {
+    associate_public_ip_address = true
+    security_groups = [aws_security_group.main.id]
+  }
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -110,7 +113,7 @@ resource "aws_autoscaling_group" "main" {
   desired_capacity     = 2
   max_size             = 5
   min_size             = 1
-  vpc_zone_identifier  = [aws_subnet.private_subnet.id]  # Use private subnet for instances
+  vpc_zone_identifier  = [aws_subnet.public_subnet.id]  # Use private subnet for instances
   launch_template {
     id      = aws_launch_template.main.id
     version = "$Latest"
@@ -118,7 +121,7 @@ resource "aws_autoscaling_group" "main" {
 
   tag {
     key                 = "Name"
-    value               = "IS565-october"
+    value               = "IS565-november"
     propagate_at_launch = true
   }
 }
@@ -128,7 +131,7 @@ resource "aws_lb" "main" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.main.id]
-  subnets            = [aws_subnet.public_subnet.id]  # Use public subnet for the Load Balancer
+  subnets            = [aws_subnet.public_subnet.id, aws_subnet.public_subnet2.id]
 }
 
 resource "aws_lb_listener" "main" {
